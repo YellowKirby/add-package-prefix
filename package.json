@@ -28,7 +28,7 @@
     "node": ">=8.x"
   },
   "homepage": "https://github.com/yellowkirby/add-package-prefix",
-  "keywords": ["add-package-prefix", "lass"],
+  "keywords": ["add-package-prefix", "package", "prefix", "scope"],
   "license": "MIT",
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
