@@ -11,10 +11,14 @@ module.exports = function(prefix, packageName) {
   stringInvariant('prefix', prefix);
   stringInvariant('name', packageName);
 
-  const maybeHyphen = prefix.length > 0 ? '-' : '';
   const splitPoint = packageName.indexOf('/') + 1;
   const scope = packageName.substr(0, splitPoint);
-  const name = packageName.substr(splitPoint);
+  const baseName = packageName.substr(splitPoint);
+  const needsPrefix = !baseName.startsWith(prefix);
+  const needsHyphen = needsPrefix && prefix.length > 0;
 
-  return `${scope}${prefix}${maybeHyphen}${name}`.replace(/\s+/g, '-');
+  return [scope, needsPrefix && prefix, needsHyphen && '-', baseName]
+    .filter(Boolean)
+    .join('')
+    .replace(/\s+/g, '-');
 };

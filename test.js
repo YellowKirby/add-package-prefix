@@ -23,3 +23,12 @@ test(
   'more\tspaces\nand things',
   'hello-world-more-spaces-and-things'
 );
+
+test('existing prefix', doIt, 'prefix', 'prefix-package', 'prefix-package');
+test(
+  'existing prefix + scope',
+  doIt,
+  'prefix',
+  '@scope/prefix-package',
+  '@scope/prefix-package'
+);

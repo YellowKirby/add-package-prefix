@@ -42,14 +42,16 @@ yarn add add-package-prefix
 > addPlugin(prefix : string, packageName : string)
 
 Prefixes the `packageName` with the given `prefix`, ignoring any [package
-scope][package-scope]. Automatically converts spaces to hyphens.
+scope][package-scope]. Automatically converts spaces to hyphens. `prefix`
+will not be added if `packageName` already contains the `prefix`.
 
 ```js
 const addPrefix = require('add-package-prefix');
 
-addPrefix('babel-plugin', 'my-cool-project');        // => '@scope/babel-plugin-my-cool-project'
+addPrefix('babel-plugin', 'my-cool-project');        // => 'babel-plugin-my-cool-project'
 addPrefix('webpack-plugin', '@scope/awesome-thing'); // => '@scope/webpack-plugin-awesome-thing'
 addPrefix('yep yep', 'this is fun');                 // => 'yep-yep-this-is-fun'
+addPrefix('babel-plugin', 'babel-plugin-something'); // => 'babel-plugin-something'
 ```
 
 
