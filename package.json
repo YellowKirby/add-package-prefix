@@ -1,7 +1,7 @@
 {
   "name": "add-package-prefix",
   "description": "Add a (scope-friendly) prefix to an npm package name",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "YellowKirby <YellowKirby@users.noreply.github.com> ()",
   "bugs": {
     "url": "https://github.com/yellowkirby/add-package-prefix/issues",
@@ -29,7 +29,12 @@
     "node": ">=4.x"
   },
   "homepage": "https://github.com/yellowkirby/add-package-prefix",
-  "keywords": ["add-package-prefix", "package", "prefix", "scope"],
+  "keywords": [
+    "add-package-prefix",
+    "package",
+    "prefix",
+    "scope"
+  ],
   "license": "MIT",
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
@@ -43,7 +48,11 @@
     "lines": 100,
     "functions": 100,
     "branches": 100,
-    "reporter": ["lcov", "html", "text"]
+    "reporter": [
+      "lcov",
+      "html",
+      "text"
+    ]
   },
   "repository": {
     "type": "git",
@@ -58,7 +67,9 @@
   },
   "xo": {
     "extends": "prettier",
-    "plugins": ["prettier"],
+    "plugins": [
+      "prettier"
+    ],
     "parserOptions": {
       "sourceType": "script"
     },
