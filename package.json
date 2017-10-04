@@ -7,7 +7,10 @@
     "url": "https://github.com/yellowkirby/add-package-prefix/issues",
     "email": "YellowKirby@users.noreply.github.com"
   },
-  "contributors": ["YellowKirby <YellowKirby@users.noreply.github.com> ()"],
+  "contributors": [
+    "YellowKirby <YellowKirby@users.noreply.github.com> ()",
+    "brianchung808 <brianchung808@users.noreply.github.com> ()"
+  ],
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.22.0",
@@ -20,12 +23,10 @@
     "lint-staged": "^4.0.4",
     "nyc": "^11.1.0",
     "prettier": "^1.6.1",
-    "remark-cli": "^4.0.0",
-    "remark-preset-github": "^0.0.6",
     "xo": "^0.19.0"
   },
   "engines": {
-    "node": ">=8.x"
+    "node": ">=4.x"
   },
   "homepage": "https://github.com/yellowkirby/add-package-prefix",
   "keywords": ["add-package-prefix", "package", "prefix", "scope"],
@@ -34,8 +35,7 @@
     "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
       "prettier --write --single-quote --trailing-comma none",
       "git add"
-    ],
-    "*.md": ["remark . -qfo", "git add"]
+    ]
   },
   "main": "index.js",
   "nyc": {
@@ -45,16 +45,13 @@
     "branches": 100,
     "reporter": ["lcov", "html", "text"]
   },
-  "remarkConfig": {
-    "plugins": ["preset-github"]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/yellowkirby/add-package-prefix"
   },
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo && remark . -qfo",
+    "lint": "xo",
     "precommit": "lint-staged && npm test",
     "test": "npm run lint && npm run test-coverage",
     "test-coverage": "cross-env NODE_ENV=test nyc ava"
