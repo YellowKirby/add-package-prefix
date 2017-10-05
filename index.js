@@ -11,7 +11,8 @@ module.exports = function(prefix, packageName) {
   stringInvariant('prefix', prefix);
   stringInvariant('name', packageName);
 
-  const splitPoint = packageName.indexOf('/') + 1;
+  const hasScope = packageName.startsWith('@');
+  const splitPoint = hasScope ? packageName.indexOf('/') + 1 : 0;
   const scope = packageName.substr(0, splitPoint);
   const baseName = packageName.substr(splitPoint);
   const needsPrefix = !baseName.startsWith(prefix);
